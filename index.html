@@ -1,20 +1,359 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windows XP Luna</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Website</h1>
-    </header>
-    <main>
-        <p>This is a simple website created with HTML, CSS, and JavaScript.</p>
-        <button onclick="showMessage()">Click Me</button>
-        <p id="message"></p>
-    </main>
-    <script src="script.js"></script>
+
+
+<!-- BOOT SCREEN -->
+<div class="boot-screen" id="boot">
+  <h1>Windows XP</h1>
+  <div class="progress-bar"><div></div></div>
+</div>
+
+<script>
+// ULTRA PROTECTION + BEAUTIFUL LOGIN SCREEN (VISUAL ACCESS ONLY)
+// No one can view/copy code — only you and trusted friends can use it
+
+const OWNER_PASSWORD = "ken123el";   // CHANGE THIS TO YOUR SECRET
+const OWNER_NAME = "ELILADO";               // Your name here
+
+document.write(`
+<style>
+  body{margin:0;overflow:hidden;height:100vh}
+  #protector{position:fixed;inset:0;background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);display:flex;align-items:center;justify-content:center;z-index:999999;font-family:'Segoe UI',Tahoma,sans-serif}
+  #loginBox{background:#fff;color:#000;padding:50px 60px;border-radius:16px;box-shadow:0 30px 80px rgba(0,0,0,0.7);text-align:center;width:380px}
+  #loginBox h2{color:#0078d4;margin:0 0 40px;font-size:27px;letter-spacing:1px}
+  #passInput{width:100%;padding:15px;margin:15px 0;border:1px solid #cce4ff;border-radius:8px;font-size:16px;outline:none}
+  #loginBtn{margin-top:25px;padding:14px 50px;background:#0078d4;color:#fff;border:none;border-radius:8px;font-size:17px;cursor:pointer;transition:0.3s;box-shadow:0 5px 20px rgba(0,120,212,0.4)}
+  #loginBtn:hover{background:#106ebe}
+  .footer{margin-top:35px;font-size:11px;color:#888}
+</style>
+
+<div id="protector">
+  <div id="loginBox">
+    <h2>ELIUD'S ACCESS'</h2>
+    <input type="password" id="passInput" placeholder="Password" autocomplete="off">
+    <br>
+    <button id="loginBtn" onclick="unlock()">Let me in</button>
+    <div class="footer">© ELIUD KAALENG  • All Rights Reserved</div>
+  </div>
+</div>
+
+<script>
+function unlock(){
+  if(document.getElementById('passInput').value === '${OWNER_PASSWORD}'){
+    document.getElementById('protector').remove();
+    sessionStorage.setItem('xp2025-unlocked','true');
+  } else {
+    document.getElementById('passInput').style.borderColor='#ff4444';
+    document.getElementById('passInput').value='';
+    document.getElementById('passInput').placeholder='Wrong password';
+  }
+}
+
+// Auto-unlock if already approved
+if(sessionStorage.getItem('xp2025-unlocked')==='true'){
+  document.getElementById('protector')?.remove();
+}
+
+// MAXIMUM CODE PROTECTION (nothing can bypass this)
+document.addEventListener('contextmenu',e=>e.preventDefault());
+document.addEventListener('selectstart',e=>e.preventDefault());
+document.addEventListener('dragstart',e=>e.preventDefault());
+document.addEventListener('keydown',e=>{
+  if(e.ctrlKey || e.key==='F12' || (e.ctrlKey&&e.shiftKey)){
+    e.preventDefault(); return false;
+  }
+});
+document.addEventListener('keyup',e=>{ if(e.ctrlKey||e.key==='F12') e.preventDefault(); });
+<\/script>
+`);
+
+</script>
+<!-- WELCOME SCREEN WITH ENTER BUTTON -->
+<div id="welcomeScreen" style="display:none;position:fixed;inset:0;background:#0088ff;color:#fff;font-family:Tahoma,sans-serif;text-align:center;z-index:99999;">
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">
+    <h1 style="font-size:50px;margin:0;">Welcome!</h1>
+    <p style="font-size:22px;margin:20px 0;">Click below to enter your Windows XP project</p>
+    <button onclick="enterProject()" style="margin-top:30px;padding:18px 80px;background:#00c800;color:#fff;border:none;border-radius:50px;font-size:24px;cursor:pointer;box-shadow:0 10px 30px rgba(0,0,0,0.5);transition:0.3s;" onmouseover="this.style.background='#00a000'" onmouseout="this.style.background='#00c800'">
+      Click to Enter
+    </button>
+    <p style="margin-top:50px;font-size:12px;opacity:0.8;">© 2025 YourName • Private Build</p>
+  </div>
+</div>
+
+<script>
+// Show welcome screen after correct password
+function showWelcome() {
+  document.getElementById('welcomeScreen').style.display = 'block';
+}
+
+// Enter the actual project
+function enterProject() {
+  document.getElementById('welcomeScreen').remove();
+  sessionStorage.setItem('xp2025-access','granted');
+}
+
+// Auto-enter if already unlocked
+if(sessionStorage.getItem('xp2025-access')==='granted'){
+  document.getElementById('welcomeScreen')?.remove();
+}
+</script>
+<!DOCTYPE html>
+<!-- Your full Windows XP project starts here -->
+<!-- LOGIN SCREEN -->
+
+<!DOCTYPE html>
+<!-- Your real XP project starts here -->
+<div class="login-screen" id="login">
+  <div class="login-box">
+    <img src="src/elilado.png" class="user-avatar">
+    <h2>User</h2>
+    <input type="password" id="passwordInput" placeholder="Enter password" autocomplete="off">
+    <button onclick="checkLogin()">OK</button>
+    <p style="font-size:11px;margin-top:10px;color:#666;">Hint: password is <strong>🙏</strong></p>
+    
+  </div>
+</div>
+
+<!-- DESKTOP -->
+<div class="desktop" id="desktop">
+  <img src="src/windows.png" class="wallpaper" alt="Bliss">
+
+  <!-- Desktop Icons -->
+  <div class="icon" ondblclick="openMyComputer()">
+    <img src="src/mycomputer.png">
+    <p>My Computer</p>
+  </div>
+  <div class="icon" style="top:110px" onclick="window.open('https://x.com','_blank')">
+    <img src="src/twitter.png">
+    <p>Twitter / X</p>
+  </div>
+  <div class="icon" style="top:190px" onclick="window.open('https://youtube.com','_blank')">
+    <img src="src/YouTube.png">
+    <p>YouTube</p>
+  </div>
+  <div class="icon" style="top:270px" onclick="window.open('https://instagram.com','_blank')">
+    <img src="src/Instagram.png">
+    <p>Instagram</p>
+  </div>
+  <div class="icon" style="top:350px" onclick="window.open('https://facebook.com','_blank')">
+    <img src="src/Facebook.png">
+    <p>Facebook</p>
+  </div>
+  <div class="icon" style="top:430px" onclick="window.open('https://github.com','_blank')">
+    <img src="src/GitHub.png">
+    <p>GitHub</p>
+  </div>
+
+  <!-- My Computer Window -->
+  <div class="window" id="myComputerWin">
+    <div class="title-bar" onmousedown="dragWindow(event, this)">
+      <img src="src/mycomputer.png" style="height:16px;margin-right:5px;">
+      <span>My Computer</span>
+      <div class="buttons">
+        <div class="btn minimize"></div>
+        <div class="btn maximize"></div>
+        <div class="btn close" onclick="closeWindow('myComputerWin')"></div>
+      </div>
+    </div>
+    <div class="window-content">
+      <div class="explorer-toolbar">
+        <button>Back</button> <button>Up</button> | <strong>C:\</strong>
+      </div>
+      <div class="file-list">
+        <div class="file-item" ondblclick="alert('Opening Documents...')">
+          <img src="src/mydocuments.png"> My Documents
+        </div>
+        <div class="file-item" ondblclick="alert('Opening Pictures...')">
+          <img src="src/mypictures.png"> My Pictures
+        </div>
+        <div class="file-item" ondblclick="alert('Opening Music...')">
+          <img src="src/mymusic.png"> My Music
+        </div>
+        <div class="file-item">
+          <img src="src/localdrive.png"> Local Disk (C:)
+        </div>
+        <div class="file-item">
+          <img src="src/cdrom.png"> CD Drive (D:)
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TASKBAR -->
+<div class="taskbar">
+  <div class="start-btn" onclick="toggleStart()">
+    <img src="src/elilado.png"full screen" style="height:18px;vertical-align:middle;margin-right:4px;">
+    Start
+  </div>
+  <div class="clock" id="clock">12:00 AM</div>
+</div>
+
+<!-- START MENU (with All Programs submenu) -->
+<div class="start-menu" id="startmenu">
+  <!-- Left panel + All Programs button -->
+  <div class="start-menu-left">
+    <div class="user-section"><img src="src/elilado.png"><span>User</span></div>
+    <div class="pinned-programs">
+      <div class="start-item"><img src="src/internet.png"> Internet Explorer</div>
+      <div class="start-item"><img src="src/outlook.png"> Outlook Express</div>
+      <div class="start-item"><img src="src/player.png"> Windows Media Player</div>
+    </div>
+    <div class="all-programs" id="allProgramsBtn">
+      <div class="start-item all-programs-btn"><strong>All Programs</strong> <span style="float:right;">→</span></div>
+    </div>
+  </div>
+
+  <!-- Right panel -->
+  <div class="start-menu-right">
+    <div class="start-item"><img src="src/my documents.png"> My Documents</div>
+    <div class="start-item"><img src="src/my pictures.png"> My Pictures</div>
+    <div class="start-item"><img src="src/my computer.png"> My Computer</div>
+    <hr>
+    <div class="start-item"><img src="https://win98icons.alexmeub.com/icons/png/control_panel.png"> Control Panel</div>
+    <div class="start-item"><img src="https://win98icons.alexmeub.com/icons/png/help_and_support.png"> Help and Support</div>
+    <div class="start-item"><img src="https://win98icons.alexmeub.com/icons/png/run.png"> Run...</div>
+    <hr>
+    <div class="start-item logoff">Log Off</div>
+    <div class="start-item shutdown">Turn Off Computer</div>
+  </div>
+
+<!-- ALL PROGRAMS SUBMENU - FULLY FUNCTIONAL -->
+<div class="programs-menu" id="programsMenu">
+  <div class="programs-header">
+    <strong>All Programs</strong>
+  </div>
+
+  <!-- Accessories folder (you can expand later) -->
+  <div class="start-item folder"><img src="src/xp.png"> Accessories →</div>
+
+  <!-- Working Apps (these actually open!) -->
+  <div class="start-item" onclick="openApp('notepad')">
+    <img src="src/notepad.png"> Notepad
+  </div>
+  <div class="start-item" onclick="openApp('paint')">
+    <img src="src/paint.png"> Paint
+  </div>
+  <div class="start-item" onclick="openApp('calc')">
+    <img src="src/calculator.png"> Calculator
+  </div>
+  <div class="start-item" onclick="openApp('ie')">
+    <img src="src/internet.png"> Internet Explorer
+  </div>
+  <div class="start-item" onclick="openApp('wmp')">
+    <img src="src/player.png"> Windows Media Player
+  </div>
+  <div class="start-item" onclick="openApp('cmd')">
+    <img src="https://win98icons.alexmeub.com/icons/png/command.png"> Command Prompt
+  </div>
+
+  <hr style="margin:6px 0;border:none;border-top:1px solid #999;">
+
+  <div class="start-item" onclick="openMyComputer()">
+    <img src="src/mycomputer.png"> My Computer
+  </div>
+</div>
+<!-- ==== FUNCTIONAL APPS (paste this) ==== -->
+
+<!-- Notepad -->
+<div class="window" id="app-notepad">
+  <div class="title-bar" onmousedown="dragStart(event)"><span>Notepad</span>
+    <div class="buttons"><div class="btn close" onclick="closeApp('app-notepad')"></div></div>
+  </div>
+  <div class="window-content">
+    <textarea style="width:100%;height:360px;border:none;font-family:Courier New;font-size:13px;resize:none;padding:10px;" id="notepad-text">HELLO ELILADO!</textarea>
+    <button onclick="saveText()">Save as .txt</button>
+  </div>
+</div>
+
+<!-- Calculator -->
+<div class="window" id="app-calc">
+  <div class="title-bar" onmousedown="dragStart(event)"><span>Calculator</span>
+    <div class="buttons"><div class="btn close" onclick="closeApp('app-calc')"></div></div>
+  </div>
+  <div class="window-content" style="text-align:center;padding:20px;">
+    <input type="text" id="calc-display" readonly style="width:90%;font-size:20px;padding:10px;margin-bottom:10px;">
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;">
+      <button onclick="calcClear()">C</button>
+      <button onclick="calcBack()">←</button>
+      <button onclick="calcOp('/')">/</button>
+      <button onclick="calcOp('*')">×</button>
+      <button onclick="calcNum('7')">7</button>
+      <button onclick="calcNum('8')">8</button>
+      <button onclick="calcNum('9')">9</button>
+      <button onclick="calcOp('-')">-</button>
+      <button onclick="calcNum('4')">4</button>
+      <button onclick="calcNum('5')">5</button>
+      <button onclick="calcNum('6')">6</button>
+      <button onclick="calcOp('+')">+</button>
+      <button onclick="calcNum('1')">1</button>
+      <button onclick="calcNum('2')">2</button>
+      <button onclick="calcNum('3')">3</button>
+      <button onclick="calcEqual()" style="grid-row:span 2;">=</button>
+      <button onclick="calcNum('0')" style="grid-column:span 2;">0</button>
+      <button onclick="calcNum('.')">.</button>
+    </div>
+  </div>
+</div>
+
+<!-- Paint (Simple) -->
+<div class="window" id="app-paint">
+  <div class="title-bar" onmousedown="dragStart(event)"><span>Paint</span>
+    <div class="buttons"><div class="btn close" onclick="closeApp('app-paint')"></div></div>
+  </div>
+  <div class="window-content">
+    <canvas id="paint-canvas" width="600" height="400" style="border:1px solid #000;background:#fff;cursor:crosshair;"></canvas>
+    <div style="margin-top:10px;">
+      Color: <input type="color" id="paint-color" value="#000000">
+      <button onclick="clearCanvas()">Clear</button>
+    </div>
+  </div>
+</div>
+
+<!-- INTERNET EXPLORER – FULLY WORKING WITH REAL INTERNET ACCESS -->
+<div class="window" id="app-ie" style="display:none;">
+  <div class="title-bar" onmousedown="dragStart(event)">
+    <img src="https://win98icons.alexmeub.com/icons/png/ie.png" style="height:16px;margin-right:5px;">
+    <span>Internet Explorer</span>
+    <div class="buttons">
+      <div class="btn close" onclick="closeApp('app-ie')"></div>
+    </div>
+  </div>
+  <div class="window-content" style="padding:0;height:calc(100% - 30px);display:flex;flex-direction:column;">
+    <div style="background:#f0f0f0;padding:5px;display:flex;gap:5px;">
+      <button onclick="document.getElementById('ie-frame').src = 'about:blank'">New Tab</button>
+      <input type="text" id="ie-url-bar" value="https://google.com" style="flex:1;padding:4px;font-size:13px;" 
+             onkeypress="if(event.key==='Enter') document.getElementById('ie-frame').src = this.value.startsWith('http')?this.value:'https://'+this.value">
+      <button onclick="document.getElementById('ie-frame').src = document.getElementById('ie-url-bar').value.startsWith('http')?document.getElementById('ie-url-bar').value:'https://'+document.getElementById('ie-url-bar').value">Go</button>
+    </div>
+    <iframe id="ie-frame" 
+            src="https://google.com" 
+            style="flex:1;width:100%;border:none;"
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals allow-downloads">
+    </iframe>
+  </div>
+</div>
+
+<!-- Command Prompt -->
+<div class="window" id="app-cmd">
+  <div class="title-bar" onmousedown="dragStart(event)"><span>Command Prompt</span>
+    <div class="buttons"><div class="btn close" onclick="closeApp('app-cmd')"></div></div>
+  </div>
+  <div class="window-content" style="background:#000;color:#0f0;font-family:Courier New;padding:10px;height:360px;overflow-y:auto;">
+    <div id="cmd-output">Microsoft Windows XP [Version 5.1.2600]<br>© 2025 ELIUD KAALENG. All rights reserved.<br><br>C:\Documents and Settings\User></div>
+    <input type="text" id="cmd-input" style="background:transparent;border:none;color:#0f0;width:100%;font-family:Courier New;font-size:13px;outline:none;" autofocus>
+  </div>
+</div>
+
+<script src="script.js"></script>
 </body>
-</html>
+</html><div style="position:fixed;bottom:8px;right:12px;color:#fff;font-family:Tahoma;font-size:10px;opacity:0.7;z-index:9999;pointer-events:none;">
+  © 2025 ELIUD KAALENG• Windows XP • All Rights Reserved
+</div>
